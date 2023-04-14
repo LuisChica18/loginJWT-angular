@@ -19,6 +19,10 @@ public class UsuarioServiceImpl implements UserDetailsService{
 
 	@Autowired
 	private IUsuarioRepo repo;
+
+	public List<Usuario> listarUsuarios(){
+		return repo.findAll();
+	}
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

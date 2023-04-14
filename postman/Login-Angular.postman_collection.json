@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "1d28a204-4759-4b22-9e15-0dfb7d5b957a",
+		"name": "Login-Angular",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16230861"
+	},
+	"item": [
+		{
+			"name": "Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "l@ginsecurItY",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "loginsecurity",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/oauth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsicmVzb3VyY2VpZCJdLCJ1c2VyX25hbWUiOiJhZG1pbiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJleHAiOjE2ODE0ODMwMTgsImF1dGhvcml0aWVzIjpbIkRCQSIsIkFETUlOIl0sImp0aSI6IjNiN2YwYzI3LTIxNTktNGQ5My05OWM2LTU2ZmUyOGRhZmY5OCIsImNsaWVudF9pZCI6ImxvZ2luc2VjdXJpdHkifQ.JTpiYM8kLNg9LcpNvB6lma_n9GtLsQMbCqByTX0OMJw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/listar-usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"listar-usuarios"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
